@@ -1,0 +1,23 @@
+@model IEnumerable<Male.Models.Category>
+<div class="card-heading">
+    <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+</div>
+<div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+    <div class="card-body">
+        <div class="shop__sidebar__categories">
+            <ul
+                class="nice-scroll"
+                tabindex="1"
+                style="overflow-y: hidden; outline: none"
+            >
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <li><a href="#">@item.Name</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
