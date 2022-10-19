@@ -1,10 +1,10 @@
 const provinceSelect = document.querySelector('.province');
-
+console.log(provinceSelect);
 if (provinceSelect) {
     fetch('https://provinces.open-api.vn/api/?depth=2')
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
+            console.log({data});
             [...data].forEach((pr) => {
                 const option = document.createElement('option');
                 option.value = pr.name;
@@ -15,6 +15,7 @@ if (provinceSelect) {
 
             provinceSelect.addEventListener('change', (e) => {
                 const districtsSelect = document.querySelector('.districts');
+                console.log(districtsSelect);
                 if (!districtsSelect) return;
                 districtsSelect.innerHTML = '';
                 var select = e.target;

@@ -34,7 +34,7 @@
                             {
                                      <span>Hi: @User.FindFirst("username")?.Value <i class="arrow_carrot-down"></i></span>
                                     <ul>
-                                            <li><a asp-action='' class="unhover d-flex p-2 text-black disabled">Profile</a></li>
+                                            <li><a asp-action='index' asp-controller="profile" class="unhover d-flex p-2 text-black disabled">Profile</a></li>
                                             <li>
                                                 <form asp-action="logout" asp-controller='auth' >
                                                     <button type="submit" class="btn btn-danger">Logout</button>
@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="./index.html"
+                    <a asp-action='index' asp-controller='Home'
                         ><img src="~/client/img/logo.png" alt=""
                     /></a>
                 </div>

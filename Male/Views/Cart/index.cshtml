@@ -41,7 +41,7 @@
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
                                             <img
-                                                src="~/client/img/shopping-cart/cart-1.jpg"
+                                                src="~/uploads/@item.product.img1"
                                                 alt=""
                                             />
                                         </div>
@@ -83,9 +83,8 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="#"
-                                ><i class="fa fa-spinner"></i> Update cart</a
-                            >
+                            <a  asp-action='index' asp-controller='order'
+                                ><i class="fa fa-spinner"></i> Order</a>
                         </div>
                     </div>
                 </div>

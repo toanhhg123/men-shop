@@ -42,6 +42,10 @@ public class MyDBContext : DbContext
           modelBuilder.Entity<Order>()
          .Property(b => b.id)
          .HasDefaultValue("newid()");
+
+        modelBuilder.Entity<Blog>()
+         .Property(b => b.id)
+         .HasDefaultValue("newid()");
     }
 
 
@@ -57,6 +61,8 @@ public class MyDBContext : DbContext
     public DbSet<Cart> Carts {set;get;} = default!;
 
     public DbSet<Order> Orders {set;get;} = default!;
+    public DbSet<Blog> Blogs {set;get;} = default!;
+
 
 
 

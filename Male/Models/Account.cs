@@ -34,6 +34,20 @@ public class Account
 
 }
 
+public class UserProfile
+{
+    [Required(ErrorMessage = "User name is require")]
+    [StringLength(maximumLength: 50, MinimumLength = 6, ErrorMessage = "account name has at least 6 characters")]
+    public string userName { set; get; } = default!;
+   
+    public string? address { get; set; } = default!;
+
+    public string? phoneNumber { get; set; } = default!;
+
+    public string? img {set;get;}  = default!;
+
+}
+
 
 public class UserRegister {
    

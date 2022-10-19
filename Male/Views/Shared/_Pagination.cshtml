@@ -1,0 +1,35 @@
+@model Male.utils.PaginatedList<Product>;
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="product__pagination">
+         
+            @if(Model.PageIndex - 3 > 0){
+                <a asp-route-pageindex='1' asp-action='index'>1</a>
+                <span>...</span>
+            }
+            @if(Model.PageIndex - 2 > 0){
+                <a asp-route-pageindex='@(Model.PageIndex-2)' asp-action='index'>@(Model.PageIndex-2)</a>
+            }
+            @if(Model.PageIndex - 1 > 0){
+                <a asp-route-pageindex='@(Model.PageIndex-1)' asp-action='index'>@(Model.PageIndex-1)</a>
+
+            }
+                
+            <a class="active" href="#">@Model.PageIndex</a>
+            @if(Model.PageIndex + 1 <= Model.TotalPages){
+                <a asp-route-pageindex='@(Model.PageIndex+1)' asp-action='index'>@(Model.PageIndex+1)</a>
+
+            }
+            @if(Model.PageIndex + 2 <= Model.TotalPages){
+                <a asp-route-pageindex='@(Model.PageIndex+2)' asp-action='index'>@(Model.PageIndex+2)</a>
+
+            }
+             @if(Model.PageIndex + 3 <= Model.TotalPages){
+                <span>...</span>
+                <a asp-route-pageindex='@(Model.TotalPages)' asp-action='index'>@Model.TotalPages</a>
+            }
+        </div>
+    </div>
+</div>

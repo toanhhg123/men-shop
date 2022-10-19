@@ -5,10 +5,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Male.Models;
+using Male.utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using NToastNotify;
 
 namespace Male.Controllers
@@ -32,9 +34,43 @@ namespace Male.Controllers
             _toast = toastNotification;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var userId = _userService.getUserId();
+            var user = await _dbContext.Accounts.FirstOrDefaultAsync(x => x.id.Equals(userId));
+            var userProfile = JsonConvert.DeserializeObject<UserProfile>(JsonConvert.SerializeObject(user));
+            return View(userProfile);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(UserProfile userProfile, string province, string districts, IFormFile? img)
+        {
+            try
+            {
+                var userId = _userService.getUserId();
+                var user = await _dbContext.Accounts.FirstOrDefaultAsync(x => x.id.Equals(userId));
+                if (user == null)
+                    throw new Exception("user not found");
+                if (province != "" && province != null)
+                    user.address = province + " " + districts;
+                if (img != null)
+                    {
+                        HandleFile.DeleteFile(user.img ?? "");
+                        user.img = HandleFile.UploadSingleFile(img);
+                    }
+                user.phoneNumber = userProfile.phoneNumber ?? user.phoneNumber;
+
+                await _dbContext.SaveChangesAsync();
+                
+                return View(nameof(Index));
+
+
+            }
+            catch (System.Exception e)
+            {
+                ViewBag.errorMessage = e.Message;
+                return View(nameof(Index));
+            }
         }
 
 

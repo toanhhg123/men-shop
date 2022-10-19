@@ -5,7 +5,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Male.Models;
+using Male.utils;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Male.Controllers
@@ -21,10 +23,21 @@ namespace Male.Controllers
             _dbContext = dBContext;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? pageIndex, string? search)
         {
+            var products = from s in _dbContext.Products select s;
+            if(search != null)
+               products = from s in _dbContext.Products where s.Name.Contains(search) select s;            
+
+            // pagination            
+            int pageSize = 8;
+            int pageNumber = pageIndex ?? 1;
+            var productsPg = await PaginatedList<Product>.CreateAsync(products, pageNumber, pageSize);
             ViewBag.Categories = _dbContext.Categories;
-            return View(_dbContext.Products.ToList());
+            ViewBag.productsPg = productsPg;
+
+            
+            return View(productsPg);
         }
 
         public IActionResult Detail(string id)

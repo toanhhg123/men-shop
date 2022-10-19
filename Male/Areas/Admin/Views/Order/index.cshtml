@@ -1,0 +1,82 @@
+@model IEnumerable<Male.Models.Order>;
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Categories</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.account.email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.account.userName)
+                            </th>
+                             <th>
+                                @Html.DisplayNameFor(model => model.product.Name)
+                            </th>
+                             <th>
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.isConfirm)
+                            </th>
+                            <th>
+                                Acctions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                   
+                                    <td>
+                                        @item.account.email
+                                    </td>
+                                    <td>
+                                        @item.account.userName
+                                    </td>
+                                    <td>
+                                        @item.product.Name
+                                    </td>
+                                    <td>
+                                        @item.Quantity
+                                    </td>
+                                    <td>
+                                    @if(item.isConfirm == true){
+                                        <span class="badge badge-success">Success</span>
+                                      }else {
+                                        <span class="badge badge-info">watting</span>
+                                      }
+                                    </td>
+                                    <td>
+                                       @if(item.isConfirm){
+                                        <form asp-action="UnConfirm" method="post"  asp-route-id='@item.id'>
+                                            <button type="submit" class="btn btn-info btn-rounded btn-icon">
+                                                <i class="mdi mdi-close"></i>
+                                            </button>
+                                        </form>
+                                       }
+                                       else {
+                                        <form asp-action="Confirm" method="post"  asp-route-id='@item.id'>
+                                            <button type="submit" class="btn btn-success btn-rounded btn-icon">
+                                                <i class="mdi mdi-check"></i>
+                                            </button>
+                                        </form>
+                                       }
+                                    </td>
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

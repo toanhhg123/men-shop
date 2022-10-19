@@ -148,8 +148,9 @@ namespace Male.Controllers
         public async Task<IActionResult> Forbidden()
         {
 
-            await HttpContext.SignOutAsync(
-               CookieAuthenticationDefaults.AuthenticationScheme);
+            // await HttpContext.SignOutAsync(
+            //    CookieAuthenticationDefaults.AuthenticationScheme);
+            await Task.CompletedTask;
             return View();
         }
 
