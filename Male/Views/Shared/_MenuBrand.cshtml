@@ -14,7 +14,7 @@
                 {
                     foreach (var item in Model)
                     {
-                        <li><a href="#">@item.Name</a></li>
+                        <li><a asp-action='index' asp-controller='Shop' asp-route-brand="@item.Name">@item.Name</a></li>
                     }
                 }
             </ul>

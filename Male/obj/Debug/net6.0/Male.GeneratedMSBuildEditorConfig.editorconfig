@@ -8,185 +8,185 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Male
 build_property.RootNamespace = Male
-build_property.ProjectDir = C:\Users\Admin\Desktop\MaleShop\Male\
+build_property.ProjectDir = D:\MaleShop\Male\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\MaleShop\Male
+build_property.MSBuildProjectDirectory = D:\MaleShop\Male
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Account/create.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Account/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Account/index.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Account/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Blog/Create.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Blog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Blog/Index.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Brand/create.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Brand/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcY3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Brand/index.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Brand/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Category/create.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Category/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcY3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Category/index.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Category/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Home/Index.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Order/index.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Order/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Product/create.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Product/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxjcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Product/index.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Product/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Shared/Error.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Shared/_Layout.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Shared/_Navbar.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Shared/_Sidebar.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Shared/_Sidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TaWRlYmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/_ViewImports.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Areas/Admin/Views/_ViewStart.cshtml]
+[D:/MaleShop/Male/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Auth/Forbidden.cshtml]
+[D:/MaleShop/Male/Views/Auth/Forbidden.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3JiaWRkZW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Auth/Login.cshtml]
+[D:/MaleShop/Male/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Auth/SignUp.cshtml]
+[D:/MaleShop/Male/Views/Auth/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Blog/Detail.cshtml]
+[D:/MaleShop/Male/Views/Blog/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Blog/Index.cshtml]
+[D:/MaleShop/Male/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Cart/index.cshtml]
+[D:/MaleShop/Male/Views/Cart/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/CheckOut/CheckOutSuccess.cshtml]
+[D:/MaleShop/Male/Views/CheckOut/CheckOutSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tPdXRcQ2hlY2tPdXRTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/CheckOut/index.cshtml]
+[D:/MaleShop/Male/Views/CheckOut/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tPdXRcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Contact/Index.cshtml]
+[D:/MaleShop/Male/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Home/Index.cshtml]
+[D:/MaleShop/Male/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Home/Privacy.cshtml]
+[D:/MaleShop/Male/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Order/index.cshtml]
+[D:/MaleShop/Male/Views/Order/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcaW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Profile/Index.cshtml]
+[D:/MaleShop/Male/Views/Profile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/Error.cshtml]
+[D:/MaleShop/Male/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/_Footer.cshtml]
+[D:/MaleShop/Male/Views/Shared/_Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/_Header.cshtml]
+[D:/MaleShop/Male/Views/Shared/_Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/_MenuBrand.cshtml]
+[D:/MaleShop/Male/Views/Shared/_MenuBrand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51QnJhbmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/_MenuCategory.cshtml]
+[D:/MaleShop/Male/Views/Shared/_MenuCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51Q2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/_Pagination.cshtml]
+[D:/MaleShop/Male/Views/Shared/_Pagination.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/MaleShop/Male/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shop/detail.cshtml]
+[D:/MaleShop/Male/Views/Shop/detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxkZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shop/index.cshtml]
+[D:/MaleShop/Male/Views/Shop/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/_ViewImports.cshtml]
+[D:/MaleShop/Male/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/_ViewStart.cshtml]
+[D:/MaleShop/Male/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Desktop/MaleShop/Male/Views/Shared/_Layout.cshtml]
+[D:/MaleShop/Male/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-svt00js7w7

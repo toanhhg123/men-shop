@@ -1,4 +1,17 @@
 @model IEnumerable<Male.Models.Product>
+@{
+    var pageIndex = ViewBag.pageIndex as string;
+    var search = ViewBag.search as string;
+    var fillter = ViewBag.fillter as string;
+    var category = ViewBag.category as string;
+    var brand = ViewBag.brand as string;
+    var sort = ViewBag.sort as string;
+    var fromPrice = ViewBag.fromPrice as string;
+    var toPrice = ViewBag.toPrice as string;
+
+
+
+}
 
 <section class="breadcrumb-option">
         <div class="container">
@@ -24,8 +37,17 @@
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
                         <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" name="search" placeholder="Search...">
+                            <form  
+                                id="form__product"
+                                action="/shop"
+                                method="get"
+                            >
+                                <input hidden type="text" name="categogy"  value="@category">
+                                <input hidden type="text" name="brand"  value="@brand">
+                                <input hidden type="text" name="sort" id="input__sort"  value="@sort">
+                                <input hidden type="text" name="fromPrice" id="input__from"  value="@fromPrice">
+                                <input hidden type="text" name="toPrice" id="input__to"  value="@toPrice">
+                                <input type="text" name="search" placeholder="Search..." value="@search">
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
                         </div>
@@ -43,12 +65,12 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__price">
                                                 <ul>
-                                                    <li><a href="#">$0.00 - $50.00</a></li>
-                                                    <li><a href="#">$50.00 - $100.00</a></li>
-                                                    <li><a href="#">$100.00 - $150.00</a></li>
-                                                    <li><a href="#">$150.00 - $200.00</a></li>
-                                                    <li><a href="#">$200.00 - $250.00</a></li>
-                                                    <li><a href="#">250.00+</a></li>
+                                                    <li><a href="#" from='0'  to='50'    class="price-fillter" >$0.00 - $50.00</a></li>
+                                                    <li><a href="#" from='50'   to='100' class="price-fillter" >$50.00 - $100.00</a></li>
+                                                    <li><a href="#" from='100' to='150'  class="price-fillter" >$100.00 - $150.00</a></li>
+                                                    <li><a href="#" from='150' to='200'  class="price-fillter" >$150.00 - $200.00</a></li>
+                                                    <li><a href="#" from='200' to='250'   class="price-fillter" >$200.00 - $250.00</a></li>
+                                                    <li><a href="#" from='250' to='10000' class="price-fillter" >250.00+</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -160,10 +182,9 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__right">
                                     <p>Sort by Price:</p>
-                                    <select>
-                                        <option value="">Low To High</option>
-                                        <option value="">$0 - $55</option>
-                                        <option value="">$55 - $100</option>
+                                    <select id="select__sort">
+                                        <option selected='@(sort!=null && sort.Equals("ASC"))' value="ASC">Low To High</option>
+                                        <option selected='@(sort!=null && sort.Equals("DESC"))' value="DESC">High To Low</option>
                                     </select>
                                 </div>
                             </div>
@@ -220,6 +241,12 @@
 
  <script >
     document.addEventListener("DOMContentLoaded", () => {
+            const inputSort = document.querySelector('#input__sort');
+            const selectSort = document.getElementById('select__sort');
+            const btnSubmitFormProduct = document.getElementById("submit__form__product");
+            const formProduct = document.getElementById('form__product');
+            const priceFillters = document.querySelectorAll('.price-fillter');
+
             (function () {
                 var url = $("#Categories").data("url");
                 $("#Categories").load(url);
@@ -228,5 +255,21 @@
                 var url = $("#brands").data("url");
                 $("#brands").load(url);
             })();
+
+            selectSort.onchange = (e) => {
+                inputSort.value = e.target.value;
+                formProduct.submit();
+            }
+
+            priceFillters.forEach(a => {
+                a.addEventListener('click', e => {
+                    const from = a.getAttribute('from');
+                    const to = a.getAttribute('to');
+                    document.getElementById('input__from').value = from;
+                    document.getElementById('input__to').value = to;
+                    formProduct.submit();
+                })
+            })
+           
     });
 </script>

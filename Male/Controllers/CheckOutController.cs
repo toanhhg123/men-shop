@@ -88,6 +88,9 @@ namespace Male.Controllers
             ToListAsync();
 
             bool order = await Order(carts);
+            ViewBag.Message = "Thanh toán thành công hóa đơn ";
+            ViewBag.ResponseCode = "00";
+
             return View("CheckOutSuccess");
         }
 
@@ -96,12 +99,11 @@ namespace Male.Controllers
         {
             var info = await _dbContext.Accounts.FirstOrDefaultAsync(x => x.id == _userService.getUserId());
             if (info == null) return BadRequest();
-
-            string vnp_Returnurl = ConfigRoot["appSettings:returnUrl"]; //URL nhan ket qua tra ve 
+            string vnp_Returnurl = $"{Request.Scheme}://{Request.Host}/checkout/CheckOutSuccess"; //URL nhan ket qua tra ve 
             string vnp_Url = ConfigRoot["appSettings:Url"]; //URL thanh toan cua VNPAY 
             string vnp_TmnCode = ConfigRoot["appSettings:tmnCode"]; //Ma website
             string vnp_HashSecret = ConfigRoot["appSettings:hashSecret"]; //
-
+            
             var carts = await _dbContext.Carts.
             Include(x => x.product).
             Include(x => x.Account).
@@ -120,13 +122,15 @@ namespace Male.Controllers
                     desc = ""
                 });
             }
-            double price = (Orders.Aggregate(0, (total, x) => total + (x.Quantity * x.product.Price)))*2300000;
+            double price = (Orders.Sum(x => x.product.Price * x.Quantity));
+            price = price * 2300000;
+            
             VnPayLibrary vnpay = new VnPayLibrary();
             vnpay.AddRequestData("vnp_Version", VnPayLibrary.VERSION);
             vnpay.AddRequestData("vnp_Command", "pay");
             vnpay.AddRequestData("vnp_TmnCode", vnp_TmnCode);
-            vnpay.AddRequestData("vnp_Amount",price.ToString());
-            vnpay.AddRequestData("vnp_CreateDate", DateTime.Now.ToString("yyyyMMddHHmmss"));
+            vnpay.AddRequestData("vnp_Amount", price.ToString());
+            vnpay.AddRequestData("vnp_CreateDate", DateTimeOffset.Now.ToString("yyyyMMddHHmmss"));
             vnpay.AddRequestData("vnp_CurrCode", "VND");
             vnpay.AddRequestData("vnp_IpAddr", Utils.GetIpAddress(_httpContextAccessor));
             vnpay.AddRequestData("vnp_Locale", "vn");
@@ -136,7 +140,7 @@ namespace Male.Controllers
             vnpay.AddRequestData("vnp_TxnRef", Guid.NewGuid().ToString()); // Mã tham chiếu của giao dịch tại hệ thống của merchant. Mã này là duy nhất dùng để phân biệt các đơn hàng gửi sang VNPAY. Không được trùng lặp trong ngày
 
             //Add Params of 2.1.0 Version
-            // vnpay.AddRequestData("vnp_ExpireDate", txtExpire.Text);
+            // vnpay.AddRequestData("vnp_ExpireDate", DateTime.Now.AddMinutes(10).ToString("yyyyMMddHHmmss"));
             // //Billing
             // vnpay.AddRequestData("vnp_Bill_Mobile", txt_billing_mobile.Text.Trim());
             // vnpay.AddRequestData("vnp_Bill_Email", txt_billing_email.Text.Trim());
@@ -177,7 +181,6 @@ namespace Male.Controllers
                         VNPay.AddResponseData(s.Key, s.Value.ToString());
                     }
                 }
-
                 var orderId = queris.FirstOrDefault(x => x.Key == "vnp_TxnRef").Value; //mã hóa đơn
                 long vnpayTranId = Convert.ToInt64(queris.FirstOrDefault(x => x.Key == "vnp_TransactionNo").Value); //mã giao dịch tại hệ thống VNPAY
                 string vnp_ResponseCode = queris.FirstOrDefault(x => x.Key == "vnp_ResponseCode").Value; //response code: 00 - thành công, khác 00 - xem thêm https://sandbox.vnpayment.vn/apis/docs/bang-ma-loi/
