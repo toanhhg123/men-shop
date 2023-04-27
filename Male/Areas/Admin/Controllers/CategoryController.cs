@@ -40,15 +40,28 @@ namespace Male.Areas.Admin.Controllers
             return View();
         }
 
+        public IActionResult Edit(string id)
+        {
+            var category = _DbContext.Categories.FirstOrDefault(x => x.id == id);
+            return View(category);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([Bind] Category category)
         {
-            if (!ModelState.IsValid) return View(category);
-            await _DbContext.Categories.AddAsync(category);
-            await _DbContext.SaveChangesAsync();
+            try
+            {
+                if (!ModelState.IsValid) return View(category);
+                await _DbContext.Categories.AddAsync(category);
+                await _DbContext.SaveChangesAsync();
 
-            _toastNotification.AddSuccessToastMessage("add Category success !");
-            return RedirectToAction("index");
+                _toastNotification.AddSuccessToastMessage("add Category success !");
+                return RedirectToAction("index");
+            }
+            catch (System.Exception ex)
+            {
+                return Ok(ex.Message);
+            }
         }
 
         [HttpPost]
@@ -65,6 +78,26 @@ namespace Male.Areas.Admin.Controllers
 
             }
             return RedirectToAction("index");
+        }
+
+        [HttpPost]
+        public IActionResult Edit([Bind] Category category)
+        {
+            try
+            {
+                var categoryDb = _DbContext.Categories.FirstOrDefault(x => x.id == category.id);
+                if (categoryDb != null)
+                {
+                    _DbContext.Entry(categoryDb).CurrentValues.SetValues(category);
+                    _DbContext.SaveChanges();
+                    _toastNotification.AddSuccessToastMessage("update success");
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch (System.Exception ex)
+            {
+                return Ok(ex.Message);
+            }
         }
 
     }

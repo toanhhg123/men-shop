@@ -7,7 +7,7 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Create Account</h4>
+            <h4 class="card-title">Create Category</h4>
             <form class="forms-sample" asp-action='create' method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label asp-for='Name'></label>
@@ -19,6 +19,28 @@
                         asp-for='Name'
                     />
                     <span asp-validation-for='Name' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='metaTiltle'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputmetaTiltle1"
+                        placeholder="metaTiltle"
+                        asp-for='metaTiltle'
+                    />
+                    <span asp-validation-for='metaTiltle' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='metaKeyword'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputmetaKeyword1"
+                        placeholder="metaKeyword"
+                        asp-for='metaKeyword'
+                    />
+                    <span asp-validation-for='metaKeyword' class="bg-danger text-white my-1 d-block"></span>
                 </div>
                 <div class="form-group">
                       <label asp-for="Desc"></label>

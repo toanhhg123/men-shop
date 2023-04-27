@@ -59,7 +59,6 @@ namespace Male.Controllers
 
             try
             {
-                if (!ModelState.IsValid) return View(userRegister);
                 if (userRegister.password != userRegister.confirmPassword) throw new Exception("Pasword and confirm not match");
 
                 var roleCustomer = _dbCOntext.Roles.First(x => x.RoleName == _configRoles.RoleCustomer);
@@ -92,6 +91,7 @@ namespace Male.Controllers
             catch (System.Exception ex)
             {
                 ViewBag.errorMessage = ex.Message;
+                _toast.AddErrorToastMessage(ex.Message);
                 return View();
             }
         }
@@ -119,7 +119,7 @@ namespace Male.Controllers
 
                 var authProperties = new AuthenticationProperties
                 {
-                    
+
                 };
 
                 await HttpContext.SignInAsync(

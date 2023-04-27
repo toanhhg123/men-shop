@@ -1,0 +1,92 @@
+@model Male.Models.Blog;
+@{
+   
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create Blog</h4>
+            <form class="forms-sample" asp-action='edit' method="post" enctype="multipart/form-data">
+                  <input hidden asp-for='id' />
+                  <input hidden asp-for='Img' />
+
+                <div class="form-group">
+                    <label asp-for='Title'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputTitle1"
+                        placeholder="Title"
+                        asp-for='Title'
+                    />
+                    <span asp-validation-for='Title' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for='Message'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputMessage1"
+                        placeholder="Message"
+                        asp-for='Message'
+                    />
+                    <span asp-validation-for='Message' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='metaTiltle'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputmetaTiltle1"
+                        placeholder="metaTiltle"
+                        asp-for='metaTiltle'
+                    />
+                    <span asp-validation-for='metaTiltle' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='metaKeyword'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputmetaKeyword1"
+                        placeholder="metaKeyword"
+                        asp-for='metaKeyword'
+                    />
+                    <span asp-validation-for='metaKeyword' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for='Auth'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputAuth1"
+                        placeholder="Auth"
+                        asp-for='Auth'
+                    />
+                    <span asp-validation-for='Auth' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+           
+                 <div class="form-group">
+                      <label asp-for="Desc1"></label>
+                      <textarea asp-for='Desc1' class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                      <label asp-for="Desc2"></label>
+                      <textarea asp-for='Desc2' class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                      <label asp-for="Desc3"></label>
+                      <textarea asp-for='Desc3' class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                      <label asp-for="Desc4"></label>
+                      <textarea asp-for='Desc4' class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">
+                    Submit
+                </button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

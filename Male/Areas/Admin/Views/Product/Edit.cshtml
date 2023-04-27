@@ -1,0 +1,95 @@
+@model Male.Models.Product;
+@{
+    var brands = ViewBag.brands as List<Brand>;
+    var Categories = ViewBag.Categories as List<Category>;
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">edit</h4>
+
+            <form class="forms-sample" asp-action='Edit' method="post" enctype="multipart/form-data">
+                <input hidden  asp-for="id" >
+                <input hidden  asp-for="img1" >
+                <input hidden  asp-for="img2" >
+                <input hidden  asp-for="img3" >
+                <input hidden  asp-for="img4" >
+                <div class="form-group">
+                    <label asp-for='Name'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputName1"
+                        placeholder="Name"
+                        asp-for='Name'
+                    />
+                    <span asp-validation-for='Name' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for='Price'></label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="exampleInputPrice1"
+                        placeholder="Price"
+                        asp-for='Price'
+                    />
+                    <span asp-validation-for='Price' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for='CountStock'></label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="exampleInputCountStock1"
+                        placeholder="CountStock"
+                        asp-for='CountStock'
+                    />
+                    <span asp-validation-for='CountStock' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='rating'></label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        id="exampleInputrating1"
+                        placeholder="rating"
+                        asp-for='rating'
+                    />
+                    <span asp-validation-for='rating' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleSelectGender">category</label>
+                    <select name="category" class="form-control" id="exampleSelectGender">
+                        @if(Categories != null){
+                            foreach (var item in Categories)
+                            {
+                                <option value="@item.id">@item.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="exampleSelectGender">category</label>
+                    <select name="brand" class="form-control" id="exampleSelectGender">
+                        @if(brands != null){
+                            foreach (var item in brands)
+                            {
+                                <option value="@item.id">@item.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+                 <div class="form-group">
+                      <label asp-for="description"></label>
+                      <textarea asp-for='description' class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">
+                    Submit
+                </button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

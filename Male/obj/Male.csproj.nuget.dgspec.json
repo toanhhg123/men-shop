@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MaleShop\\Male\\Male.csproj": {}
+    "/Users/toanle/code Thue/men-shop/Male/Male.csproj": {}
   },
   "projects": {
-    "D:\\MaleShop\\Male\\Male.csproj": {
+    "/Users/toanle/code Thue/men-shop/Male/Male.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MaleShop\\Male\\Male.csproj",
+        "projectUniqueName": "/Users/toanle/code Thue/men-shop/Male/Male.csproj",
         "projectName": "Male",
-        "projectPath": "D:\\MaleShop\\Male\\Male.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\MaleShop\\Male\\obj\\",
+        "projectPath": "/Users/toanle/code Thue/men-shop/Male/Male.csproj",
+        "packagesPath": "/Users/toanle/.nuget/packages/",
+        "outputPath": "/Users/toanle/code Thue/men-shop/Male/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/toanle/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.407/RuntimeIdentifierGraph.json"
         }
       }
     }

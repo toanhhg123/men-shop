@@ -29,7 +29,7 @@ public class HomeController : Controller
         return PartialView("_MenuCategory", _myDBContext.Categories);
 
     }
-     public IActionResult Brands()
+    public IActionResult Brands()
     {
         return PartialView("_MenuBrand", _myDBContext.Brands);
 

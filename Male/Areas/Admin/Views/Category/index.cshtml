@@ -16,6 +16,15 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Desc)
                             </th>
+                             <th>
+                                @Html.DisplayNameFor(model => model.metaTiltle)
+                            </th>
+                             <th>
+                                @Html.DisplayNameFor(model => model.metaKeyword)
+                            </th>
+                            <th>
+                                Actions
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,9 +41,16 @@
                                         @item.Desc
                                     </td>
                                     <td>
+                                        @item.metaTiltle
+                                    </td>
+                                    <td>
+                                        @item.metaKeyword
+                                    </td>
+                                    <td class="d-flex">
+                                        <a class="btn btn-success btn-sm mx-1" asp-action="Edit" asp-route-id="@item.id" >edit</a>
                                         <form asp-action="Delete"  asp-route-id='@item.id'>
-                                            <button type="submit" class="btn btn-danger btn-rounded btn-icon">
-                                                <i class="mdi mdi-close-circle"></i>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                delete
                                             </button>
                                         </form>
                                     </td>

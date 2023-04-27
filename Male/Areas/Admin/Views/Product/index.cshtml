@@ -25,6 +25,9 @@
                              <th>
                                 @Html.DisplayNameFor(model => model.img1)
                             </th>
+                            <th>
+                               actions
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,10 +52,11 @@
                                     <td >
                                         <img src="~/uploads/@item.img1" alt="">
                                     </td>
-                                     <td >
+                                     <td class="d-flex">
+                                        <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-success btn-sm mx-2">Edit</a>
                                         <form asp-action="Delete" asp-controller="Brand"  asp-route-id='@item.id'>
-                                            <button type="submit" class="btn btn-danger btn-rounded btn-icon">
-                                                <i class="mdi mdi-close-circle"></i>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                delete
                                             </button>
                                         </form>
                                     </td>

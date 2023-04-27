@@ -54,14 +54,15 @@ namespace Male.Controllers
                 if (province != "" && province != null)
                     user.address = province + " " + districts;
                 if (img != null)
-                    {
-                        HandleFile.DeleteFile(user.img ?? "");
-                        user.img = HandleFile.UploadSingleFile(img);
-                    }
+                {
+                    HandleFile.DeleteFile(user.img ?? "");
+                    user.img = HandleFile.UploadSingleFile(img);
+                }
                 user.phoneNumber = userProfile.phoneNumber ?? user.phoneNumber;
 
                 await _dbContext.SaveChangesAsync();
-                
+                _toast.AddAlertToastMessage("update profile success");
+
                 return View(nameof(Index));
 
 

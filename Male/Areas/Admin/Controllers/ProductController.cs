@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-
+using NToastNotify;
 
 namespace Male.Areas.Admin.Controllers
 {
@@ -20,11 +20,13 @@ namespace Male.Areas.Admin.Controllers
     {
         private readonly MyDBContext _DbContext;
 
+        private readonly IToastNotification _toastNotification;
 
 
-        public ProductController(MyDBContext dBContext)
+        public ProductController(MyDBContext dBContext, IToastNotification toastNotification)
         {
             _DbContext = dBContext;
+            _toastNotification = toastNotification;
         }
 
         public IActionResult Index()
@@ -36,6 +38,14 @@ namespace Male.Areas.Admin.Controllers
             ViewBag.brands = _DbContext.Brands.ToList();
             ViewBag.Categories = _DbContext.Categories.ToList();
             return View();
+        }
+
+        public IActionResult Edit(string id)
+        {
+            ViewBag.brands = _DbContext.Brands.ToList();
+            ViewBag.Categories = _DbContext.Categories.ToList();
+            var product = _DbContext.Products.FirstOrDefault(x => x.id == id);
+            return View(product);
         }
 
         [HttpPost]
@@ -72,6 +82,27 @@ namespace Male.Areas.Admin.Controllers
             await _DbContext.SaveChangesAsync();
 
             return RedirectToAction("index");
+        }
+
+        [HttpPost]
+        public IActionResult Edit([Bind] Product product, string category, string brand)
+        {
+
+            try
+            {
+                var productDb = _DbContext.Products.FirstOrDefault(x => x.id == product.id);
+                if (productDb == null) throw new Exception("not found product");
+                _DbContext.Entry(productDb).CurrentValues.SetValues(product);
+                product.category = _DbContext.Categories.FirstOrDefault(x => x.id == category) ?? product.category;
+                product.Brand = _DbContext.Brands.FirstOrDefault(x => x.id == brand) ?? product.Brand;
+                _DbContext.SaveChanges();
+                _toastNotification.AddSuccessToastMessage("update success");
+                return RedirectToAction(nameof(Index));
+            }
+            catch (System.Exception ex)
+            {
+                return Ok(ex.Message);
+            }
         }
     }
 }

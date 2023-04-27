@@ -61,10 +61,11 @@
   <script src="~/js/ApiAddress.js"></script>
 
     <script src="~/admin/js/file-upload.js"></script>
-    @Html.RenderPartialAsync("_ValidationScriptsPartial");
   <!-- End custom js for this page-->
     @await RenderSectionAsync("Scripts", required: false)
+     <partial name="_ValidationScriptsPartial" />
     @await Component.InvokeAsync("NToastNotify")
+
 
 </body>
 

@@ -1,0 +1,57 @@
+@model Male.Models.Category;
+
+@{
+
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create Category</h4>
+            <input type="text" asp-for="id" hidden>
+            <form class="forms-sample" asp-action='edit' method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for='Name'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputName1"
+                        placeholder="Name"
+                        asp-for='Name'
+                    />
+                    <span asp-validation-for='Name' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='metaTiltle'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputmetaTiltle1"
+                        placeholder="metaTiltle"
+                        asp-for='metaTiltle'
+                    />
+                    <span asp-validation-for='metaTiltle' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='metaKeyword'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputmetaKeyword1"
+                        placeholder="metaKeyword"
+                        asp-for='metaKeyword'
+                    />
+                    <span asp-validation-for='metaKeyword' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                <div class="form-group">
+                      <label asp-for="Desc"></label>
+                      <textarea asp-for='Desc' class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">
+                    Submit
+                </button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

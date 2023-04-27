@@ -35,17 +35,25 @@ public class MyDBContext : DbContext
          .Property(b => b.id)
          .HasDefaultValue("newid()");
 
-          modelBuilder.Entity<Cart>()
-         .Property(b => b.id)
-         .HasDefaultValue("newid()");
+        modelBuilder.Entity<Cart>()
+       .Property(b => b.id)
+       .HasDefaultValue("newid()");
 
-          modelBuilder.Entity<Order>()
-         .Property(b => b.id)
-         .HasDefaultValue("newid()");
+        modelBuilder.Entity<Order>()
+       .Property(b => b.id)
+       .HasDefaultValue("newid()");
 
         modelBuilder.Entity<Blog>()
          .Property(b => b.id)
          .HasDefaultValue("newid()");
+
+        modelBuilder.Entity<PaymentMethod>()
+        .Property(b => b.id)
+        .HasDefaultValue("newid()");
+
+        modelBuilder.Entity<OrderPayment>()
+       .Property(b => b.id)
+       .HasDefaultValue("newid()");
     }
 
 
@@ -58,10 +66,12 @@ public class MyDBContext : DbContext
 
     public DbSet<Product> Products { set; get; } = default!;
 
-    public DbSet<Cart> Carts {set;get;} = default!;
+    public DbSet<Cart> Carts { set; get; } = default!;
 
-    public DbSet<Order> Orders {set;get;} = default!;
-    public DbSet<Blog> Blogs {set;get;} = default!;
+    public DbSet<Order> Orders { set; get; } = default!;
+    public DbSet<Blog> Blogs { set; get; } = default!;
+    public DbSet<PaymentMethod> PaymentMethods { set; get; } = default!;
+    public DbSet<OrderPayment> OrderPayments { set; get; } = default!;
 
 
 

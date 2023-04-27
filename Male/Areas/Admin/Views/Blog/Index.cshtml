@@ -16,6 +16,15 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Auth)
                             </th>
+                             <th>
+                                @Html.DisplayNameFor(model => model.metaTiltle)
+                            </th>
+                             <th>
+                                @Html.DisplayNameFor(model => model.metaKeyword)
+                            </th>
+                             <th>
+                               Actions
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,10 +40,17 @@
                                     <td >
                                         <p class="text-slipt">@item.Auth</p>
                                     </td>
-                                     <td >
-                                        <form asp-action="Delete" asp-controller="Brand"  asp-route-id='@item.id'>
-                                            <button type="submit" class="btn btn-danger btn-rounded btn-icon">
-                                                <i class="mdi mdi-close-circle"></i>
+                                    <td >
+                                        <p class="text-slipt">@item.metaTiltle</p>
+                                    </td>
+                                    <td >
+                                        <p class="text-slipt">@item.metaKeyword</p>
+                                    </td>
+                                     <td class="d-flex">
+                                        <a class="btn btn-success btn-sm mx-1" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                                         <form asp-action="Delete" asp-controller="Brand"  asp-route-id='@item.id'>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                               delete
                                             </button>
                                         </form>
                                     </td>

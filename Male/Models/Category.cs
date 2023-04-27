@@ -12,5 +12,12 @@ public class Category
 
     [Required(ErrorMessage = "category name is require")]
     public string Name { get; set; } = default!;
+    public string? metaTiltle { get; set; } = default!;
+    public string? metaKeyword { get; set; } = default!;
+    public DateTime? createdAt { get; set; } = DateTime.Now;
+    public DateTime? updateAt { get; set; } = DateTime.Now;
+    public string? updateBy { get; set; }
+    public string? createdBy { get; set; }
+
     public string? Desc { get; set; } = default!;
 }
