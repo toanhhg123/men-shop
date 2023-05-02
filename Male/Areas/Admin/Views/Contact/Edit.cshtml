@@ -1,0 +1,55 @@
+@model Male.Models.Contact;
+@{
+   
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create Contact</h4>
+            <form class="forms-sample" asp-action='edit' method="post" enctype="multipart/form-data">
+                    <input
+                        asp-for='id'
+                        hidden
+                    />
+                <div class="form-group">
+                    <label asp-for='name'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputTitle1"
+                        placeholder="name"
+                        asp-for='name'
+                    />
+                    <span asp-validation-for='name' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for='address'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputMessage1"
+                        placeholder="address"
+                        asp-for='address'
+                    />
+                    <span asp-validation-for='address' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                 <div class="form-group">
+                    <label asp-for='phoneNumber'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputmetaTiltle1"
+                        placeholder="phoneNumber"
+                        asp-for='phoneNumber'
+                    />
+                    <span asp-validation-for='phoneNumber' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+              
+                <button type="submit" class="btn btn-primary mr-2">
+                    Submit
+                </button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

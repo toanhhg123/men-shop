@@ -54,12 +54,21 @@ public class MyDBContext : DbContext
         modelBuilder.Entity<OrderPayment>()
        .Property(b => b.id)
        .HasDefaultValue("newid()");
+
+        modelBuilder.Entity<Contact>()
+      .Property(b => b.id)
+      .HasDefaultValue("newid()");
+        modelBuilder.Entity<Banner>()
+      .Property(b => b.id)
+      .HasDefaultValue("newid()");
     }
 
 
 
 
     public DbSet<Account> Accounts { set; get; } = default!;
+    public DbSet<Banner> Banners { set; get; } = default!;
+
     public DbSet<Role> Roles { set; get; } = default!;
     public DbSet<Category> Categories { set; get; } = default!;
     public DbSet<Brand> Brands { set; get; } = default!;
@@ -72,6 +81,7 @@ public class MyDBContext : DbContext
     public DbSet<Blog> Blogs { set; get; } = default!;
     public DbSet<PaymentMethod> PaymentMethods { set; get; } = default!;
     public DbSet<OrderPayment> OrderPayments { set; get; } = default!;
+    public DbSet<Contact> Contacts { set; get; } = default!;
 
 
 

@@ -1,0 +1,65 @@
+@model IEnumerable<Male.Models.Banner>;
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Banners</h4>
+           <a asp-action="create" class="btn btn-primary btn-rounded btn-icon d-flex align-items-center justify-content-center">
+                <i class="mdi mdi-account-plus"></i>
+            </a>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                image
+                            </th>
+                            <th>
+                                lable
+                            </th> 
+                            <th>
+                                title
+                            </th>
+                            <th>
+                                sub-title
+                            </th>
+                             <th>
+                               Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                   
+                                    <td class="w-25">
+                                       <img src="/uploads/@item.src" alt="@item.alt">
+                                    </td>
+                                    <td >
+                                        <p class="text-slipt">@item.alt</p>
+                                    </td>
+                                    <td >
+                                        <p class="text-slipt">@item.title</p>
+                                    </td>
+                                    <td >
+                                        <p class="text-slipt">@item.subTitle</p>
+                                    </td>
+                                    <td class="d-flex">
+                                         <form asp-action="Delete" asp-controller="Banner"  asp-route-id='@item.id'>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                               delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

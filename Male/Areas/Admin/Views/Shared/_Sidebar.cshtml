@@ -42,7 +42,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" asp-action="index" asp-area="admin" asp-controller="Account">
+            <a class="nav-link" asp-action="index" asp-area="admin" asp-controller="Contact">
                 <i class="mdi mdi-contact-mail menu-icon"></i>
                 <span class="menu-title">Contacts</span>
             </a>
@@ -54,7 +54,12 @@
                 <span class="menu-title">Blogs</span>
             </a>
         </li>
-
+     <li class="nav-item">
+            <a class="nav-link" asp-action="index" asp-area="admin" asp-controller="Banner">
+                <i class="mdi mdi-folder-image menu-icon"></i>
+                <span class="menu-title">Banner</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="mdi mdi-account menu-icon"></i>
@@ -62,7 +67,7 @@
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
+                <ul class="">
                     <li class="nav-item"> <a class="nav-link" asp-action="Index" asp-controller="Account" asp-areas="Admin"> Accounts </a></li>
                 </ul>
             </div>

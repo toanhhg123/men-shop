@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tUjhw4BPIjWX5Po/UwfXuFPpRRnV6s02bapFuIOpQWU=",
+  "Hash": "B28yXkpDJ7+aQiDiBuDtgpN763zXovgmxdcnAybd6N4=",
   "Source": "Male",
   "BasePath": "_content/Male",
   "Mode": "Default",
@@ -5797,6 +5797,23 @@
       "OriginalItemSpec": "wwwroot/uploads/258a1d0b-c71d-48bc-87bd-27b9bdb5b475.jpg"
     },
     {
+      "Identity": "/Users/toanle/code Thue/men-shop/Male/wwwroot/uploads/36de4819-2b6f-42f9-bd62-260297077fef.jpg",
+      "SourceId": "Male",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/toanle/code Thue/men-shop/Male/wwwroot/",
+      "BasePath": "_content/Male",
+      "RelativePath": "uploads/36de4819-2b6f-42f9-bd62-260297077fef.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/36de4819-2b6f-42f9-bd62-260297077fef.jpg"
+    },
+    {
       "Identity": "/Users/toanle/code Thue/men-shop/Male/wwwroot/uploads/37c73460-9289-46ae-86c1-17787ca98db0.png",
       "SourceId": "Male",
       "SourceType": "Discovered",
@@ -5982,6 +5999,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/uploads/8e800586-4a93-46a0-a894-e019adeb5d96.png"
+    },
+    {
+      "Identity": "/Users/toanle/code Thue/men-shop/Male/wwwroot/uploads/95e04c42-86ed-449d-bd4d-cba58998a59c.jpg",
+      "SourceId": "Male",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/toanle/code Thue/men-shop/Male/wwwroot/",
+      "BasePath": "_content/Male",
+      "RelativePath": "uploads/95e04c42-86ed-449d-bd4d-cba58998a59c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/95e04c42-86ed-449d-bd4d-cba58998a59c.jpg"
     },
     {
       "Identity": "/Users/toanle/code Thue/men-shop/Male/wwwroot/uploads/9c75edbd-8c1f-49f2-a471-836323b5cefa.jpeg",

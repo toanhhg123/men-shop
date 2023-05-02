@@ -1,0 +1,74 @@
+@model Male.Models.Banner;
+@{
+   
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create banner</h4>
+            <form class="forms-sample" asp-action='create' method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for='title'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="tiltle"
+                        placeholder="title"
+                        asp-for='title'
+                    />
+                    <span asp-validation-for='title' class="bg-danger text-white my-1 d-block"></span>
+                </div> 
+                <div class="form-group">
+                    <label asp-for='subTitle'></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="tiltle"
+                        placeholder="subTitle"
+                        asp-for='subTitle'
+                    />
+                    <span asp-validation-for='subTitle' class="bg-danger text-white my-1 d-block"></span>
+                </div> 
+                <div class="form-group">
+                    <label for='Img'>File upload</label>
+                    <input
+                        type="file"
+                        class="file-upload-default"
+                        name="Img"
+                    />
+                    <div class="input-group col-xs-12">
+                        <input
+                            type="text"
+                            class="form-control file-upload-info"
+                            disabled=""
+                            placeholder="Upload Image"
+                        />
+                        <span class="input-group-append">
+                            <button
+                                class="file-upload-browse btn btn-primary"
+                                type="button"
+                            >
+                                Upload
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for='alt'>desc(image)</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="alt"
+                        placeholder="alt"
+                        asp-for='alt'
+                    />
+                    <span asp-validation-for='alt' class="bg-danger text-white my-1 d-block"></span>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">
+                    Submit
+                </button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

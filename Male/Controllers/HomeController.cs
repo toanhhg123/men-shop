@@ -16,6 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        var banners = _myDBContext.Banners.ToList();
+        ViewBag.banners = banners;
         return View();
     }
 

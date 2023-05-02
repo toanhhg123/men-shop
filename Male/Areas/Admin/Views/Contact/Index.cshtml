@@ -1,0 +1,60 @@
+@model IEnumerable<Male.Models.Contact> ;
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Contacts</h4>
+           <a asp-action="create" class="btn btn-primary btn-rounded btn-icon d-flex align-items-center justify-content-center">
+                <i class="mdi mdi-account-plus"></i>
+            </a>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.address)
+                            </th>
+                             <th>
+                                @Html.DisplayNameFor(model => model.phoneNumber)
+                            </th>
+                             <th>
+                               Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                   
+                                    <td class="w-25">
+                                        @item.name
+                                    </td>
+                                    <td >
+                                        <p class="text-slipt">@item.address</p>
+                                    </td>
+                                    <td >
+                                        <p class="text-slipt">@item.phoneNumber</p>
+                                    </td>
+                                     <td class="d-flex">
+                                        <a class="btn btn-success btn-sm mx-1" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                                         <form asp-action="Delete" asp-controller="Contact" asp-area="Admin"  asp-route-id='@item.id'>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                               delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
