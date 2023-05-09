@@ -18,6 +18,7 @@ public class HomeController : Controller
     {
         var banners = _myDBContext.Banners.ToList();
         ViewBag.banners = banners;
+        ViewBag.products = _myDBContext.Products.Take(8).ToList();
         return View();
     }
 

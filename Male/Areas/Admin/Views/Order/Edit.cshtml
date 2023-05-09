@@ -1,0 +1,35 @@
+@model Male.Models.Order;
+@{
+
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Create Contact</h4>
+            <form class="forms-sample" asp-action='edit' method="post" enctype="multipart/form-data">
+                <input asp-for='id' hidden />
+
+
+                <div class="form-group">
+                    <label for="exampleSelectGender">Status</label>
+                    <select name="status" class="form-control mb-2" id="exampleSelectGender ">
+                        <option value="@Model.status">@Model.status</option>
+                        <option value="Dang Cho Lay Hang">Dang Cho Lay Hang</option>
+                        <option value="Lay Hang Thanh Cong">Lay Hang Thanh Cong</option>
+                        <option value="Dang Van Chuyen">Dang Van Chuyen</option>
+                        <option value="Nhan Hang Thanh Cong">Nhan Hang Thanh Cong</option>
+                    </select>
+
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-primary mr-2">
+                    Submit
+                </button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -11,12 +11,12 @@
                                 @Html.DisplayNameFor(model => model.account.email)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.account.userName)
+                                @Html.DisplayNameFor(model => model.status)
                             </th>
-                             <th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.product.Name)
                             </th>
-                             <th>
+                            <th>
                                 @Html.DisplayNameFor(model => model.Quantity)
                             </th>
 
@@ -24,22 +24,25 @@
                                 @Html.DisplayNameFor(model => model.isConfirm)
                             </th>
                             <th>
-                                Acctions
+                                Check
+                            </th>
+                            <th>
+                                Actions
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                       @if (Model != null)
+                        @if (Model != null)
                         {
                             foreach (var item in Model)
                             {
                                 <tr>
-                                   
+
                                     <td>
                                         @item.account.email
                                     </td>
                                     <td>
-                                        @item.account.userName
+                                        @item.status
                                     </td>
                                     <td>
                                         @item.product.Name
@@ -48,27 +51,42 @@
                                         @item.Quantity
                                     </td>
                                     <td>
-                                    @if(item.isConfirm == true){
-                                        <span class="badge badge-success">Success</span>
-                                      }else {
-                                        <span class="badge badge-info">watting</span>
-                                      }
+                                        @if (item.isConfirm == true)
+                                        {
+                                            <span class="badge badge-success">Success</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-info">watting</span>
+                                        }
                                     </td>
                                     <td>
-                                       @if(item.isConfirm){
-                                        <form asp-action="UnConfirm" method="post"  asp-route-id='@item.id'>
-                                            <button type="submit" class="btn btn-info btn-rounded btn-icon">
-                                                <i class="mdi mdi-close"></i>
+                                        @if (item.isConfirm)
+                                        {
+                                            <form asp-action="UnConfirm" method="post" asp-route-id='@item.id'>
+                                                <button type="submit" class="btn btn-info btn-rounded btn-icon">
+                                                    <i class="mdi mdi-close"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <form asp-action="Confirm" method="post" asp-route-id='@item.id'>
+                                                <button type="submit" class="btn btn-success btn-rounded btn-icon">
+                                                    <i class="mdi mdi-check"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                    </td>
+                                    <td class="d-flex">
+                                        <a class="btn btn-success btn-sm mx-1" asp-action="Edit"
+                                    asp-route-id="@item.id">Edit</a>
+                                        <form asp-action="Delete" asp-controller="order" asp-area="Admin"
+                                    asp-route-id='@item.id'>
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                delete
                                             </button>
                                         </form>
-                                       }
-                                       else {
-                                        <form asp-action="Confirm" method="post"  asp-route-id='@item.id'>
-                                            <button type="submit" class="btn btn-success btn-rounded btn-icon">
-                                                <i class="mdi mdi-check"></i>
-                                            </button>
-                                        </form>
-                                       }
                                     </td>
                                 </tr>
 

@@ -53,6 +53,7 @@ namespace Male.Controllers
                         product = item.product,
                         Quantity = item.Quantity,
                         isConfirm = false,
+                        status = "dang cho xac nhan",
                         desc = ""
                     });
 
@@ -103,7 +104,7 @@ namespace Male.Controllers
             string vnp_Url = ConfigRoot["appSettings:Url"]; //URL thanh toan cua VNPAY 
             string vnp_TmnCode = ConfigRoot["appSettings:tmnCode"]; //Ma website
             string vnp_HashSecret = ConfigRoot["appSettings:hashSecret"]; //
-            
+
             var carts = await _dbContext.Carts.
             Include(x => x.product).
             Include(x => x.Account).
@@ -124,7 +125,7 @@ namespace Male.Controllers
             }
             double price = (Orders.Sum(x => x.product.Price * x.Quantity));
             price = price * 2300000;
-            
+
             VnPayLibrary vnpay = new VnPayLibrary();
             vnpay.AddRequestData("vnp_Version", VnPayLibrary.VERSION);
             vnpay.AddRequestData("vnp_Command", "pay");

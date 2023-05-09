@@ -16,6 +16,8 @@ namespace Male.Models
 
         public int Quantity { set; get; }
 
+        public string status { set; get; } = default!;
+
         public bool isConfirm { set; get; }
 
         public string? desc;

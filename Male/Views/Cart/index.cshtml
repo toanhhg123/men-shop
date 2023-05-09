@@ -34,46 +34,45 @@
                             </tr>
                         </thead>
                         <tbody>
-                           @if(Model != null){
-                            foreach (var item in Model)
+                            @if (Model != null)
                             {
-                                 <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img
-                                                src="~/uploads/@item.product.img1"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>@item.product.Name</h6>
-                                            <h5>$@item.product.Price</h5>
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="@item.Quantity" />
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="product__cart__item">
+                                            <div class="product__cart__item__pic">
+                                                <img src="~/uploads/@item.product.img1" alt="" />
                                             </div>
-                                        </div>
-                                    </td>
-                                    @{
-                                        var total = item.product.Price * item.Quantity;
-                                    }
-                                    <td class="cart__price">$ @total</td>
-                                    <td class="cart__close">
-                                        <form asp-action="delete" method="post" asp-controller='cart' asp-route-id='@item.id'>
-                                            <button type="submit" class="btn">
-                                                <i  class="fa fa-close"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                            <div class="product__cart__item__text">
+                                                <h6>@item.product.Name</h6>
+                                                <h5>$@item.product.Price</h5>
+                                            </div>
+                                        </td>
+                                        <td class="quantity__item">
+                                            <div class="quantity">
+                                                <div class="pro-qty-2">
+                                                    <input type="text" value="@item.Quantity" />
+                                                </div>
+                                            </div>
+                                        </td>
+                                        @{
+                                            var total = item.product.Price * item.Quantity;
+                                        }
+                                        <td class="cart__price">$ @total</td>
+                                        <td class="cart__close">
+                                            <form asp-action="delete" method="post" asp-controller='cart'
+                                        asp-route-id='@item.id'>
+                                                <button type="submit" class="btn">
+                                                    <i class="fa fa-close"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
                             }
-                           }
-                           
+
                         </tbody>
-                    </table>    
+                    </table>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
@@ -83,8 +82,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a  asp-action='index' asp-controller='order'
-                                ><i class="fa fa-spinner"></i> Order</a>
+                            <a asp-action='index' asp-controller='order'><i class="fa fa-spinner"></i> Order</a>
                         </div>
                     </div>
                 </div>
@@ -100,8 +98,10 @@
                 <div class="cart__total">
                     <h6>Cart total</h6>
                     <ul>
-                        <li>Subtotal <span>$ @Model?.Aggregate(0, (acc, x) => acc + (x.product.Price * x.Quantity))</span></li>
-                        <li>Total <span>$  @Model?.Aggregate(0, (acc, x) => acc + (x.product.Price * x.Quantity))</span></li>
+                        <li>Subtotal <span>$ @Model?.Aggregate(0, (acc, x) => acc + (x.product.Price *
+                                x.Quantity))</span></li>
+                        <li>Total <span>$ @Model?.Aggregate(0, (acc, x) => acc + (x.product.Price * x.Quantity))</span>
+                        </li>
                     </ul>
                     <a asp-action='index' asp-controller='checkout' class="primary-btn">Proceed to checkout</a>
                 </div>

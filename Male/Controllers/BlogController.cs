@@ -13,6 +13,7 @@ namespace Male.Controllers
     [Route("[controller]")]
     public class BlogController : Controller
     {
+        
         private readonly ILogger<BlogController> _logger;
         private readonly MyDBContext _dbContext;
 
