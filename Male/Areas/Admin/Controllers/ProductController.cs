@@ -104,5 +104,26 @@ namespace Male.Areas.Admin.Controllers
                 return Ok(ex.Message);
             }
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+
+            try
+            {
+                var productDb = await _DbContext.Products.FirstOrDefaultAsync(x => x.id == id);
+                if (productDb == null) throw new Exception("not found product");
+
+                _DbContext.Products.Remove(productDb);
+                await _DbContext.SaveChangesAsync();
+                _toastNotification.AddSuccessToastMessage("update success");
+                return RedirectToAction(nameof(Index));
+            }
+            catch (System.Exception ex)
+            {
+                return Ok(ex.Message);
+            }
+        }
     }
 }

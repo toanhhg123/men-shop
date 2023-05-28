@@ -37,9 +37,5 @@ namespace Male.Controllers
                 .ToList();
             return View(Orders);
         }
-
-
-
-
     }
 }
